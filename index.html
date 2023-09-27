@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- <link rel="stylesheet" href="style.css" /> -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Roboto+Mono:wght@200;400&family=Shadows+Into+Light&display=swap');
+            body {
+                background-color: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                width: 100vw;
+            }
+            #game-board {
+                background-color: #ccc;
+                height: 95vmin;
+                width: 95vmin;
+                display: grid;
+                grid-template-columns: repeat(21, 1fr);
+                grid-template-rows: repeat(21, 1fr);
+                botder:1px solid black;
+                /* add grid border */
+            }
+            .snake {
+                background-color: hsl(200, 100%, 50%);
+                border-radius: 2px;
+                border: 0.25vmin solid #000;
+            }
+            .food {
+                background-color: hsl(50, 100%, 50%);
+                background-color: red;
+                border: 0.25vmin solid #000;
+
+                animation-name: blink;
+                animation-duration: 600ms;
+                animation-iteration-count: 5;
+                animation-timing-function: ease-in-out;
+                border-radius: 10px;
+            }
+            @keyframes blink {
+                0% {
+                    scale: 0.1;
+                }
+                25% {
+                    scale: 0.5;
+                }
+                50% {
+                    scale: 1;
+                }
+                75% {
+                    scale: 0.5;
+                }
+                100% {
+                    scale: 0.1;
+                }
+            }
+            #score{
+                position: absolute;
+                top: 50px;
+                left: 40px;
+                color: #ffee00;
+                font-size: 2rem;
+                font-family: 'New Tegomin', serif;
+                font-weight: bold;
+            }
+        </style>
+
+        <script src="game.js" defer type="module"></script>
+    </head>
+    <body>
+        <div id="game-board"></div>
+        <div id="score">Score: 0</div>
+    </body>
+</html>
