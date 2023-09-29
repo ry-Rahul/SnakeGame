@@ -18,7 +18,8 @@ function game(currentTime) {
         let res = confirm('You lost. Press ok to restart.');
         console.log(res);
         if (res) {
-            window.location = '/SnakeGame';
+            // window.location = '/SnakeGame';
+            window.location.reload();
         }
         return;
     }
